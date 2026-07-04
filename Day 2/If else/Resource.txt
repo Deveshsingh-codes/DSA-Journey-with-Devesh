@@ -1,0 +1,191 @@
+If-Else Statements (Python)
+📌 What are Conditional Statements?
+
+Conditional statements allow a program to make decisions based on certain conditions.
+
+Using conditional statements, Python can execute different blocks of code depending on whether a condition is True or False.
+
+The most commonly used conditional statements are:
+
+if
+if-else
+if-elif-else
+The if Statement
+
+The if statement executes a block of code only if the specified condition is True.
+
+Syntax
+if condition:
+    # Code executes if condition is True
+Example
+age = 20
+
+if age >= 18:
+    print("You are an adult.")
+Output
+You are an adult.
+The if-else Statement
+
+The else block executes when the condition inside the if statement is False.
+
+Syntax
+if condition:
+    # Executes if condition is True
+else:
+    # Executes if condition is False
+Example
+age = int(input("Enter your age: "))
+
+if age >= 18:
+    print("You are an adult.")
+else:
+    print("You are not an adult.")
+Sample Output
+Enter your age: 17
+You are not an adult.
+Flow of Execution
+          Condition
+              │
+        ┌─────┴─────┐
+        │           │
+      True       False
+        │           │
+ Execute if     Execute else
+The if-elif-else Statement
+
+When multiple conditions need to be checked, Python provides the elif (else if) statement.
+
+Instead of writing multiple independent if statements, use an if-elif-else ladder.
+
+Syntax
+if condition1:
+    # Code
+elif condition2:
+    # Code
+elif condition3:
+    # Code
+else:
+    # Code
+
+Python checks each condition from top to bottom.
+
+As soon as one condition becomes True, the remaining conditions are skipped.
+
+Example: Student Grade System
+marks = int(input("Enter your marks: "))
+
+if marks < 25:
+    print("Grade: F")
+elif 25 <= marks <= 44:
+    print("Grade: E")
+elif 45 <= marks <= 49:
+    print("Grade: D")
+elif 50 <= marks <= 59:
+    print("Grade: C")
+elif 60 <= marks <= 69:
+    print("Grade: B")
+elif 70 <= marks <= 100:
+    print("Grade: A")
+else:
+    print("Invalid marks")
+Sample Output
+Input
+54
+Output
+Grade: C
+Better (Optimized) Approach
+
+Since Python checks conditions sequentially, we don't need to repeatedly check the lower limit.
+
+marks = int(input("Enter your marks: "))
+
+if marks < 25:
+    print("Grade: F")
+elif marks < 45:
+    print("Grade: E")
+elif marks < 50:
+    print("Grade: D")
+elif marks < 60:
+    print("Grade: C")
+elif marks < 70:
+    print("Grade: B")
+elif marks <= 100:
+    print("Grade: A")
+else:
+    print("Invalid marks")
+Why is this Better?
+
+Suppose:
+
+marks = 54
+
+Python checks:
+
+54 < 25 ❌
+
+54 < 45 ❌
+
+54 < 50 ❌
+
+54 < 60 ✅
+
+As soon as it finds the first True condition, it prints:
+
+Grade: C
+
+and ignores the remaining conditions.
+
+This makes the code:
+
+✅ Cleaner
+✅ Easier to read
+✅ Easier to maintain
+✅ More efficient
+Important Notes
+Python uses indentation instead of braces {}.
+
+✅ Correct
+
+if age >= 18:
+    print("Adult")
+
+❌ Incorrect
+
+if age >= 18:
+print("Adult")
+Conditions return Boolean values.
+age = 20
+
+print(age >= 18)
+
+Output
+
+True
+Comparison Operators
+Operator	Meaning
+==	Equal to
+!=	Not Equal to
+>	Greater than
+<	Less than
+>=	Greater than or Equal to
+<=	Less than or Equal to
+Logical Operators
+Operator	Meaning
+and	Both conditions must be True
+or	At least one condition must be True
+not	Reverses the result
+
+Example
+
+age = 20
+
+if age >= 18 and age <= 60:
+    print("Eligible")
+    
+Key Takeaways
+if executes code only when the condition is True.
+else executes when the if condition is False.
+elif is used to check multiple conditions.
+Python executes the first matching condition and skips the rest.
+Proper indentation is mandatory in Python.
+Simplify condition chains by checking only the necessary upper or lower bounds whenever possible.
