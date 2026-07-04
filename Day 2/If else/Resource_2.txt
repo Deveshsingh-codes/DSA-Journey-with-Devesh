@@ -1,0 +1,201 @@
+Switch Case Statements (Python)
+📌 Introduction
+
+When making decisions in programming, we often use if-elif-else statements. They are flexible and can handle complex conditions.
+
+However, when you need to compare one variable against multiple fixed values, Python (3.10+) provides the match-case statement, which works similarly to the switch-case statement in C++, Java, and JavaScript.
+
+It makes the code cleaner, more readable, and easier to maintain.
+
+When to Use if-elif-else vs match-case
+Use if-elif-else when:
+Conditions are complex.
+Multiple logical operators (and, or, not) are involved.
+Comparisons are based on ranges.
+
+Example:
+
+marks = 72
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 70:
+    print("Grade B")
+else:
+    print("Grade C")
+Use match-case when:
+Comparing one variable against multiple exact values.
+The possible values are fixed and known.
+Code readability is important.
+The match-case Statement (Python 3.10+)
+
+Python introduced the match-case statement in Python 3.10, which serves the same purpose as the traditional switch-case statement.
+
+Syntax
+match expression:
+    case value1:
+        # Code
+    case value2:
+        # Code
+    case _:
+        # Default case
+match evaluates the expression.
+Each case checks for a matching value.
+case _ acts as the default case.
+Example 1: Print Day of the Week
+day = int(input("Enter a number (1-7): "))
+
+match day:
+    case 1:
+        print("Monday")
+    case 2:
+        print("Tuesday")
+    case 3:
+        print("Wednesday")
+    case 4:
+        print("Thursday")
+    case 5:
+        print("Friday")
+    case 6:
+        print("Saturday")
+    case 7:
+        print("Sunday")
+    case _:
+        print("Invalid Day")
+Sample Output
+Input
+4
+Output
+Thursday
+Flow of Execution
+            match day
+                │
+        ┌───────┴────────┐
+        │                │
+    Matching case      No Match
+        │                │
+ Execute case      Execute case _
+The Default Case
+
+The default case executes when none of the specified cases match.
+
+In Python, the default case is written as:
+
+case _:
+
+Example:
+
+number = 10
+
+match number:
+    case 1:
+        print("One")
+    case 2:
+        print("Two")
+    case _:
+        print("Invalid")
+
+Output
+
+Invalid
+Example 2: Calculator Menu
+choice = int(input("Enter your choice (1-4): "))
+
+match choice:
+    case 1:
+        print("Addition")
+    case 2:
+        print("Subtraction")
+    case 3:
+        print("Multiplication")
+    case 4:
+        print("Division")
+    case _:
+        print("Invalid Choice")
+Example 3: Character Matching
+grade = input("Enter Grade: ").upper()
+
+match grade:
+    case "A":
+        print("Excellent")
+    case "B":
+        print("Good")
+    case "C":
+        print("Average")
+    case "D":
+        print("Needs Improvement")
+    case _:
+        print("Invalid Grade")
+Example 4: Constant Expression
+x = 10
+y = 5
+
+match x + y:
+    case 15:
+        print("Result is 15")
+    case 20:
+        print("Result is 20")
+    case _:
+        print("No Match")
+
+Output
+
+Result is 15
+Important Notes
+1. Available from Python 3.10+
+
+match-case is supported only in Python 3.10 and later.
+
+Older versions do not support it.
+
+2. No break Statement Required
+
+Unlike C/C++, Python automatically exits after executing the matched case.
+
+match day:
+    case 1:
+        print("Monday")
+
+No break is needed.
+
+3. Default Case
+
+Always use
+
+case _:
+
+to handle unexpected values.
+
+4. Best Use Cases
+
+Use match-case when checking:
+
+Days of the week
+Months
+Menu options
+Grades
+Commands
+Fixed choices
+if-elif vs match-case
+if-elif	match-case
+Best for ranges	Best for exact values
+Supports complex conditions	Supports fixed values
+Uses logical operators	Uses pattern matching
+More flexible	Cleaner for menus/options
+Advantages of match-case
+Cleaner code
+Easy to read
+Better organization
+Faster to understand
+Ideal for menu-driven programs
+Limitations
+Available only in Python 3.10+
+Best suited for fixed values.
+Not recommended for complex logical conditions.
+Key Takeaways
+match-case is Python's alternative to the traditional switch-case statement.
+Introduced in Python 3.10.
+case _ acts as the default case.
+No break statement is required.
+Best for comparing one variable against multiple exact values.
+Use if-elif-else for complex conditions and ranges.
