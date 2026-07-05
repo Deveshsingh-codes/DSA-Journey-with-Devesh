@@ -1,0 +1,152 @@
+Understanding For Loop (Python)
+
+What is a For Loop and Why is it Used?
+
+A for loop is a control structure in Python that allows you to execute a block of code repeatedly. It is mainly used when you know how many times you want to repeat a task.
+
+Unlike C++, Python doesn't require initialization, condition checking, and increment in the loop header. Instead, it uses the range() function.
+
+Components
+Initialization → Done automatically by range().
+Condition → The loop continues until the range is exhausted.
+Increment/Decrement → Controlled by the step value in range().
+Code
+for i in range(1, 11):
+    print(f"Hey, Striver, this is the {i}th iteration")
+Output
+Hey, Striver, this is the 1th iteration
+Hey, Striver, this is the 2th iteration
+...
+Hey, Striver, this is the 10th iteration
+Explanation
+range(1, 11) generates numbers from 1 to 10.
+The loop variable i takes one value at a time.
+After every iteration, i automatically moves to the next value.
+When all values are exhausted, the loop ends.
+Working of a For Loop
+The loop starts.
+Python gets the first value from range().
+The loop body executes.
+Python moves to the next value.
+Steps 3 and 4 repeat until no values remain.
+The loop exits, and execution continues below the loop.
+Nested For Loops
+
+A nested for loop means placing one for loop inside another. It is useful when working with matrices, patterns, grids, or multiple iterations.
+
+Code
+for i in range(3):
+    for j in range(3):
+        print(f"i = {i}, j = {j}")
+Output
+i = 0, j = 0
+i = 0, j = 1
+i = 0, j = 2
+i = 1, j = 0
+...
+i = 2, j = 2
+Conditionals Inside For Loops
+
+You can use if-else statements inside a for loop.
+
+Code
+for i in range(1, 11):
+    if i % 2 == 0:
+        print(f"{i} is Even")
+    else:
+        print(f"{i} is Odd")
+Output
+1 is Odd
+2 is Even
+3 is Odd
+4 is Even
+...
+10 is Even
+Customising For Loops
+
+You can change the increment (step size) using the third argument of range().
+
+Code
+for i in range(1, 26, 5):
+    print(i)
+Output
+1
+6
+11
+16
+21
+Explanation
+
+range(start, stop, step)
+
+start → Starting value (inclusive)
+stop → Ending value (exclusive)
+step → Increment after each iteration
+
+Here,
+
+Start = 1
+Stop = 26
+Step = 5
+
+So the values are:
+
+1 → 6 → 11 → 16 → 21
+Syntax of range()
+# 1. Only stop
+for i in range(5):
+    print(i)
+
+Output:
+
+0
+1
+2
+3
+4
+# 2. Start and Stop
+for i in range(2, 6):
+    print(i)
+
+Output:
+
+2
+3
+4
+5
+# 3. Start, Stop, Step
+for i in range(2, 11, 2):
+    print(i)
+
+Output:
+
+2
+4
+6
+8
+10
+Reverse Loop
+for i in range(10, 0, -1):
+    print(i)
+
+Output
+
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+Key Points
+for loop is used when the number of iterations is known.
+Python uses the range() function for iteration.
+range(stop) starts from 0.
+range(start, stop) starts from start.
+range(start, stop, step) allows custom increments/decrements.
+Nested loops are useful for patterns, matrices, and grids.
+if-else can be used inside a for loop.
+Python automatically handles initialization and increment, making the syntax cleaner than C++ and Java
