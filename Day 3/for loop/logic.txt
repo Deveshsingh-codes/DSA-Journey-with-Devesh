@@ -1,0 +1,159 @@
+1️⃣ total = 0 kyu kiya?
+
+Soch hume sum nikalna hai.
+
+Maan le
+
+low = 3
+high = 8
+
+Hume nikalna hai
+
+3 + 4 + 5 + 6 + 7 + 8
+
+Ab initially hamare paas koi sum hai hi nahi.
+
+To hum ek variable banate hain
+
+total = 0
+
+Ye hamara sum store karne wala box hai.
+
+Fir loop me
+
+for i in range(low, high + 1):
+    total += i
+
+Har baar current number total me add hota jayega.
+
+Iteration 1
+i = 3
+
+total = 0 + 3 = 3
+Iteration 2
+i = 4
+
+total = 3 + 4 = 7
+Iteration 3
+i = 5
+
+total = 7 + 5 = 12
+Iteration 4
+i = 6
+
+total = 12 + 6 = 18
+Iteration 5
+i = 7
+
+total = 18 + 7 = 25
+Iteration 6
+i = 8
+
+total = 25 + 8 = 33
+
+Finally
+
+return total
+
+Output
+
+33
+
+Isliye total = 0 se start kiya.
+
+2️⃣ high + 1 kyu likha?
+
+Ye Python ka sabse important concept hai.
+
+Python me
+
+range(start, stop)
+
+stop value kabhi include nahi hoti.
+
+Example
+
+for i in range(1,5):
+    print(i)
+
+Output
+
+1
+2
+3
+4
+
+Notice kiya?
+
+5 print hi nahi hua.
+
+Kyuki range() last value se pehle ruk jata hai.
+
+Ab question me bola hai
+
+3 se 8 tak sum nikalo.
+
+Agar tum likhoge
+
+range(3,8)
+
+to output hoga
+
+3
+4
+5
+6
+7
+
+😅 8 to aaya hi nahi.
+
+Isliye hum likhte hain
+
+range(3,9)
+
+ya
+
+range(low, high+1)
+
+Output
+
+3
+4
+5
+6
+7
+8
+
+Ab 8 bhi include ho gaya.
+
+Visualization
+range(3,8)
+
+3 ✅
+4 ✅
+5 ✅
+6 ✅
+7 ✅
+8 ❌
+
+lekin
+
+range(3,9)
+
+3 ✅
+4 ✅
+5 ✅
+6 ✅
+7 ✅
+8 ✅
+9 ❌
+Rule yaad rakhna 🔥
+range(a,b)
+
+iska matlab hota hai
+
+a se lekar b-1 tak
+
+Ya phir aur easy language me:
+
+Start include hota hai, Stop exclude hota hai.
